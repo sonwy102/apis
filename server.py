@@ -51,17 +51,6 @@ def find_afterparties():
     response = requests.get(url, params=payload)
     data = response.json()
 
-    # TODO: Make a request to the Event Search endpoint to search for events
-    #
-    # - Use form data from the user to populate any search parameters
-    #
-    # - Make sure to save the JSON data from the response to the `data`
-    #   variable so that it can display on the page. This is useful for
-    #   debugging purposes!
-    #
-    # - Replace the empty list in `events` with the list of events from your
-    #   search results
-
     events = data['_embedded']['events']
 
     return render_template('search-results.html',
